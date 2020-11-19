@@ -1,11 +1,13 @@
 //组合函数的原理
-function compose (...args){
-    return function(value){
-        return args.reverse().reduce(function(acc,fn){
-            return fn(acc)
-        },value)
-    }
-}
+// function compose (...args){
+//     return function(value){
+//         return args.reverse().reduce(function(acc,fn){
+//             return fn(acc)
+//         },value)
+//     }
+// }
+
+const compose  =  (...args) => value => args.reverse().reduce((acc, fn) => fn(acc),value)
 
 const reverse = arr => arr.reverse();
 const first = arr => arr[0];
